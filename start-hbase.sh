@@ -20,7 +20,7 @@ mkdir -p "$data_dir"
 # force kill any existing container
 docker rm -f "${CONTAINER_NAME}" >/dev/null
 
-id=$(docker run --name=${CONTAINER_NAME} -h ${CONTAINER_NAME} -d -P -v "$data_dir:/data" "$IMAGE_NAME")
+id=$(docker run --name=${CONTAINER_NAME} -h ${CONTAINER_NAME} -d -P -v "$data_dir:/data" hbase:lts)
 
 echo "$program: Container has ID $id"
 

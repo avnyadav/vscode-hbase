@@ -37,5 +37,7 @@ EXPOSE 9095
 EXPOSE 2181
 # HBase Master web UI at :16010/master-status;  ZK at :16010/zk.jsp
 EXPOSE 16010
-
-CMD ["/opt/hbase-server"]
+RUN rm /init
+COPY init /
+RUN chmod 777 /init
+# CMD ["/opt/hbase-server"]
